@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+<meta charset="ISO-8859-1">
+<title>Welcome</title>
+</head>
+<style>
+body{
+ background-image: url("img2.jpg");
+ background-color: #cccccc;
+ background-repeat: no-repeat;
+ background-size: cover;
+}
+h1{
+ font-family:Baskerville,Times,'Times New Roman',serif;
+ font-size:70px;
+ color:white;
+ font-variant:small-caps;
+ text-align:center;
+ font-weight:bold;
+ 
+}
+h2{
+text-align:center;
+}
+a{
+color:white;}
+td,th {
+  text-align: center;
+  color:white;
+   padding: 5px;
+   font-size:20px;
+}
+tr:hover {background-color: coral;}
+</style>
+<body>
+<h1>Welcome To Hotel Transylvania</h1>
+<div>
+<table border=2 align="center">
+			<thead>
+				<tr>
+					<th>Number</th>
+					<th>Name</th>
+					<th>Type</th>
+					<th>Price</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+				<tr th:each="f:${food}">
+					<td th:text="${f.id}"></td>
+					<td th:text="${f.name}"></td>
+					<td th:text="${f.type}"></td>
+					<td th:text="${f.price}"></td>
+					<td><a th:href="@{/update/{id}(id=${f.id})}" class="btn btn-success">update</a> 
+					<a th:href="@{/delete/{id}(id=${f.id})}" class="btn btn-danger">Delete</a></td>
+				</tr>
+			  </tr>		
+			</tbody>	
+	
+		</table>
+		<h2><a href="/add">click here to add food</a></h2>
+</div>
+
+</body>
+</html>

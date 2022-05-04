@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+
+body{
+ background-image: url("img2.jpg");
+ background-color: #cccccc;
+ background-repeat: no-repeat;
+ background-size: cover;
+}
+h1{
+ font-family:Baskerville,Times,'Times New Roman',serif;
+ font-size:70px;
+ color:white;
+ font-variant:small-caps;
+ text-align:center;
+ font-weight:bold;
+ 
+}
+label{
+align: center;
+  color:white;
+   padding: 5px;
+   font-size:20px;}
+
+input{
+ border: 3px solid #555;
+  height:20px;
+}
+
+</style>
+</head>
+<body>
+<h1 align="center"> add food</h1>
+<div align="center">
+   <form  th:action="@{/adding}" th:object="${food}">
+    <label>Food id</label><br><input type="number" name="id" ><br>
+		  <label>Food name</label><br><input type="text" name="name" ><br>
+<label>Food type</label> <br><input type="text" name="type"><br>
+<label>Food Price</label><br> <input type="number" name="price"><br><br>
+<input type="submit" name="add food">
+	
+</div>
+</form>
+</body>
+</html>

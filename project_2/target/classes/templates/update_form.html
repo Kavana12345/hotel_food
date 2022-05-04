@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Updating</title>
+<style>
+
+h1{
+ font-family:Baskerville,Times,'Times New Roman',serif;
+ font-size:70px;
+ color:white;
+ font-variant:small-caps;
+ text-align:center;
+ font-weight:bold;
+ 
+}
+label{
+align: center;
+  color:white;
+   padding: 5px;
+   font-size:20px;}
+
+input{
+ border: 3px solid #555;
+  height:20px;
+}
+body{
+
+ background-color: #cccccc;
+  background-image:url("img2.jpg");
+ background-repeat: no-repeat;
+ background-size: cover;
+}
+div{
+background-image:url("img2.jpg");
+}
+
+</style>
+</head>
+<body>
+ <h1 align="center"> Update </h1>
+ <div align="center">
+   <form th:action="@{/adding}"  th:object="${food}" >
+	      	<input   type="hidden" th:field="*{id} " >
+  
+      <label>food name</label><br>	<input   type="text" th:field="*{name} " placeholder="name"><br>
+    
+    <label>food type</label>  <br>	<input   type="text" th:field="*{type} " placeholder="type"><br>
+    		
+     <label>food price</label> <br>	<input   type="number" th:field="*{price} " placeholder="price"><br><br>
+    	
+<button  type="submit"  > Update </button>
+
+</form>
+</div>
+</body>
+</html>
